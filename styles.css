@@ -1,0 +1,663 @@
+/* Reset y configuración básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Efecto de espacio con puntos blancos */
+.space {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 1000px;
+    z-index: 10;
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    color: yellow;
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2s, transform 2s;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Dancing Script', cursive;
+}
+
+.title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message {
+    font-size: 2rem;
+    margin: 30px 0;
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2s, transform 2s;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Dancing Script', cursive;
+}
+
+.message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message.red {
+    color: yellow;
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+}
+
+.button {
+    margin-top: 50px;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.button.visible {
+    opacity: 1;
+}
+
+.btn {
+    background: transparent;
+    border: 2px solid #9900ff;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    color: #9500ff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn:hover {
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.hacker-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.hacker-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #a6c91a;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .message {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+    }
+}
+
+/* PANTALLA DE FLORES - OCULTA INICIALMENTE */
+.flower-garden {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffeaa7, #fdcb6e, #e17055);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease-in, visibility 2s ease-in;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.flower-garden.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenedor de partículas brillantes */
+.star-emojis {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.star-particle {
+    position: absolute;
+    background: radial-gradient(circle, #fff 0%, #ffff00 30%, #ffd700 70%, transparent 100%);
+    border-radius: 50%;
+    animation: fallStar linear infinite;
+    opacity: 0.9;
+    box-shadow: 0 0 10px #fff, 0 0 20px #ffff00, 0 0 30px #ffd700;
+}
+
+@keyframes fallStar {
+    0% {
+        transform: translateY(-50px) rotate(0deg) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0px) rotate(36deg) scale(1);
+    }
+    90% {
+        opacity: 0.8;
+        transform: translateY(90vh) rotate(324deg) scale(0.8);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg) scale(0);
+        opacity: 0;
+    }
+}
+
+.garden-container {
+    text-align: center;
+    color: #2d3436;
+    position: relative;
+    z-index: 10;
+    padding: 2rem;
+}
+
+.garden-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    opacity: 0;
+    animation: fadeInText 2s ease-in forwards;
+    animation-delay: 2s;
+}
+
+.garden-message {
+    opacity: 0;
+    animation: fadeInText 2s ease-in forwards;
+    animation-delay: 4s;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Jardín realista desde la superficie */
+.garden {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100vh;
+    display: block;
+    padding: 0;
+    perspective: 1000px;
+}
+
+.flower-group,
+.garden-back-row,
+.garden-middle-row,
+.garden-front-row,
+.garden-scattered {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: bottom center;
+}
+
+/* Animación de crecimiento realista */
+.flower {
+    opacity: 0;
+    transform: translateY(300px) scale(0);
+    animation: emergFromEarth 3s ease-out forwards;
+    animation-delay: var(--delay);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.flower:hover {
+    transform: translateY(-15px) scale(1.08);
+    filter: brightness(1.2) drop-shadow(0 10px 20px rgba(255,255,0,0.3));
+}
+
+@keyframes emergFromEarth {
+    0% {
+        opacity: 0;
+        transform: translateY(300px) scale(0) rotate(-10deg);
+    }
+    30% {
+        opacity: 0.3;
+        transform: translateY(100px) scale(0.4) rotate(-5deg);
+    }
+    60% {
+        opacity: 0.7;
+        transform: translateY(20px) scale(0.8) rotate(2deg);
+    }
+    80% {
+        opacity: 0.9;
+        transform: translateY(-5px) scale(1.1) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+/* FLORES AMARILLAS REALISTAS */
+.yellow-flower {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 280px;
+}
+
+.yellow-flower-head {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 8px;
+    animation: flowerBreathe 4s ease-in-out infinite;
+}
+
+@keyframes flowerBreathe {
+    0%, 100% { transform: scale(1) rotate(-1deg); }
+    50% { transform: scale(1.05) rotate(1deg); }
+}
+
+.yellow-flower-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle, #B8860B, #DAA520, #FFD700);
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.2),
+        0 0 15px rgba(255,215,0,0.6);
+    animation: centerGlow 3s ease-in-out infinite;
+}
+
+@keyframes centerGlow {
+    0%, 100% { 
+        box-shadow: 
+            inset 0 2px 4px rgba(0,0,0,0.2),
+            0 0 15px rgba(255,215,0,0.6);
+    }
+    50% { 
+        box-shadow: 
+            inset 0 2px 4px rgba(0,0,0,0.2),
+            0 0 25px rgba(255,215,0,0.8);
+    }
+}
+
+.yellow-petal {
+    position: absolute;
+    width: 28px;
+    height: 40px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFED4E 30%, #F7DC6F 70%, #F4D03F 100%);
+    border-radius: 50% 80% 50% 80%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center bottom;
+    box-shadow: 
+        0 3px 12px rgba(0,0,0,0.3),
+        inset 0 1px 3px rgba(255,255,255,0.4);
+    animation: petalSway 5s ease-in-out infinite;
+}
+
+@keyframes petalSway {
+    0%, 100% { transform: translate(-50%, -95%) scale(1) rotate(var(--petal-rotation)); }
+    25% { transform: translate(-50%, -95%) scale(1.02) rotate(calc(var(--petal-rotation) + 3deg)); }
+    75% { transform: translate(-50%, -95%) scale(0.98) rotate(calc(var(--petal-rotation) - 3deg)); }
+}
+
+.yellow-petal:nth-child(1) { 
+    --petal-rotation: 0deg;
+    animation-delay: 0s; 
+}
+.yellow-petal:nth-child(2) { 
+    --petal-rotation: 45deg;
+    animation-delay: 0.3s; 
+}
+.yellow-petal:nth-child(3) { 
+    --petal-rotation: 90deg;
+    animation-delay: 0.6s; 
+}
+.yellow-petal:nth-child(4) { 
+    --petal-rotation: 135deg;
+    animation-delay: 0.9s; 
+}
+.yellow-petal:nth-child(5) { 
+    --petal-rotation: 180deg;
+    animation-delay: 1.2s; 
+}
+.yellow-petal:nth-child(6) { 
+    --petal-rotation: 225deg;
+    animation-delay: 1.5s; 
+}
+.yellow-petal:nth-child(7) { 
+    --petal-rotation: 270deg;
+    animation-delay: 1.8s; 
+}
+.yellow-petal:nth-child(8) { 
+    --petal-rotation: 315deg;
+    animation-delay: 2.1s; 
+}
+
+/* TULIPANES ELEGANTES */
+.tulip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 220px;
+}
+
+.tulip-head {
+    position: relative;
+    width: 35px;
+    height: 55px;
+    margin-bottom: 5px;
+    animation: tulipDance 3.5s ease-in-out infinite;
+}
+
+@keyframes tulipDance {
+    0%, 100% { transform: rotate(-2deg) scale(1); }
+    33% { transform: rotate(1deg) scale(1.02); }
+    66% { transform: rotate(-1deg) scale(0.98); }
+}
+
+.tulip-petal {
+    position: absolute;
+    background: linear-gradient(145deg, #FF1493 0%, #FF69B4 40%, #FFB6C1 80%, #FFC0CB 100%);
+    border-radius: 60% 60% 40% 40%;
+    box-shadow: 
+        0 4px 15px rgba(255,20,147,0.4),
+        inset 0 2px 5px rgba(255,255,255,0.3);
+    animation: tulipPetalGlow 4s ease-in-out infinite;
+}
+
+@keyframes tulipPetalGlow {
+    0%, 100% { 
+        filter: brightness(1);
+        box-shadow: 
+            0 4px 15px rgba(255,20,147,0.4),
+            inset 0 2px 5px rgba(255,255,255,0.3);
+    }
+    50% { 
+        filter: brightness(1.1);
+        box-shadow: 
+            0 6px 20px rgba(255,20,147,0.6),
+            inset 0 2px 5px rgba(255,255,255,0.4);
+    }
+}
+
+.tulip-petal:nth-child(1) {
+    width: 18px;
+    height: 45px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(-20deg);
+    z-index: 1;
+}
+
+.tulip-petal:nth-child(2) {
+    width: 20px;
+    height: 50px;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-10deg);
+    z-index: 2;
+}
+
+.tulip-petal:nth-child(3) {
+    width: 22px;
+    height: 52px;
+    top: 1px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    z-index: 3;
+}
+
+.tulip-petal:nth-child(4) {
+    width: 20px;
+    height: 50px;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%) rotate(10deg);
+    z-index: 2;
+}
+
+.tulip-petal:nth-child(5) {
+    width: 18px;
+    height: 45px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(20deg);
+    z-index: 1;
+}
+
+.tulip-petal:nth-child(6) {
+    width: 16px;
+    height: 42px;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    z-index: 0;
+    opacity: 0.8;
+}
+
+/* TALLOS REALISTAS */
+.flower-stem {
+    width: 8px;
+    background: linear-gradient(to bottom, 
+        #228B22 0%, 
+        #32CD32 30%, 
+        #90EE90 60%, 
+        #98FB98 100%);
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 
+        0 0 8px rgba(34, 139, 34, 0.5),
+        inset 1px 0 2px rgba(255,255,255,0.3);
+    animation: stemGrowth 2.5s ease-out;
+    animation-delay: var(--delay);
+}
+
+.yellow-flower .flower-stem {
+    height: 200px;
+}
+
+.tulip .flower-stem {
+    height: 160px;
+}
+
+@keyframes stemGrowth {
+    from { 
+        height: 0;
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    to { 
+        height: var(--stem-final-height);
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/* HOJAS NATURALES */
+.leaf {
+    position: absolute;
+    background: linear-gradient(45deg, 
+        #228B22 0%, 
+        #32CD32 40%, 
+        #90EE90 80%, 
+        #98FB98 100%);
+    border-radius: 0 80% 20% 100%;
+    box-shadow: 
+        0 3px 10px rgba(0,0,0,0.3),
+        inset 1px 1px 3px rgba(255,255,255,0.4);
+    animation: leafGrowth 2s ease-out, leafWave 5s ease-in-out infinite;
+    animation-delay: var(--leaf-delay), calc(var(--leaf-delay) + 2.5s);
+}
+
+@keyframes leafGrowth {
+    from {
+        transform: scale(0) rotate(var(--leaf-angle));
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(var(--leaf-angle));
+        opacity: 1;
+    }
+}
+
+@keyframes leafWave {
+    0%, 100% { 
+        transform: scale(1) rotate(var(--leaf-angle)); 
+    }
+    25% { 
+        transform: scale(1.03) rotate(calc(var(--leaf-angle) + 8deg)); 
+    }
+    75% { 
+        transform: scale(0.97) rotate(calc(var(--leaf-angle) - 8deg)); 
+    }
+}
+
+.leaf-left {
+    width: 25px;
+    height: 45px;
+    left: -20px;
+    --leaf-angle: -35deg;
+}
+
+.leaf-right {
+    width: 22px;
+    height: 40px;
+    right: -18px;
+    --leaf-angle: 35deg;
+    transform: scaleX(-1) rotate(35deg);
+}
+
+.yellow-flower .leaf-left {
+    top: 80px;
+    --leaf-delay: 2s;
+}
+
+.yellow-flower .leaf-right {
+    top: 110px;
+    --leaf-delay: 2.3s;
+}
+
+.tulip .leaf-left {
+    top: 60px;
+    --leaf-delay: 1.8s;
+    width: 20px;
+    height: 35px;
+}
+
+.tulip .leaf-right {
+    top: 85px;
+    --leaf-delay: 2.1s;
+    width: 18px;
+    height: 32px;
+}
+
+@keyframes fadeInText {
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: scale(0.3); 
+    }
+}

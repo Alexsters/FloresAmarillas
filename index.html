@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💛 Feliz Día de las Flores Amarillas :D💛</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="space" id="space"></div>
+
+    <div class="container" id="main-container">
+        <h1 class="title hacker-effect" id="title">FELIZ DÍA, AQUI TUS FLORES AMARILLAS</h1>
+        <p class="message red" id="message1">PARA TU ESPECIAL</p>
+        <p class="message" id="message2">TENGO UN DETALLE ESPECIAL PARA TI</p>
+        
+        <div class="button" id="button">
+            <button class="btn" onclick="mostrarRegalo()">
+                VER REGALO 🎁
+            </button>
+        </div>
+    </div>
+
+    <!-- Pantalla de flores que aparece después -->
+    <div class="flower-garden" id="flower-garden">
+        <div class="star-emojis" id="star-particles"></div>
+        
+        <div class="garden-container">
+            <h1 class="garden-title">Día de las Flores Amarillas 🌻</h1>
+            <p class="garden-message">Asi como estas flores ilumina mis días 💛<br>Como estas flores amarillas iluminan el jardín</p>
+        </div>
+
+        <div class="garden">
+            <!-- ZONA TRASERA DEL JARDÍN (profundidad) -->
+            <div class="garden-back-row">
+                <!-- Esquina izquierda trasera -->
+                <div class="flower tulip" style="--delay: 0.3s; position: absolute; left: 5%; top: 10%; transform: scale(0.6); z-index: 1;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 100px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 1s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 1.2s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower yellow-flower" style="--delay: 0.6s; position: absolute; left: 12%; top: 8%; transform: scale(0.65); z-index: 1;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 110px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 1.3s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 1.5s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 0.9s; position: absolute; left: 22%; top: 12%; transform: scale(0.7); z-index: 1;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 105px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 1.6s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 1.8s;"></div>
+                    </div>
+                </div>
+
+                <!-- Centro trasero -->
+                <div class="flower yellow-flower" style="--delay: 1.2s; position: absolute; left: 35%; top: 5%; transform: scale(0.75); z-index: 1;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 120px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 2s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 2.2s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 1.5s; position: absolute; left: 45%; top: 7%; transform: scale(0.68); z-index: 1;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 108px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 2.3s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 2.5s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower yellow-flower" style="--delay: 1.8s; position: absolute; right: 35%; top: 6%; transform: scale(0.72); z-index: 1;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 115px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 2.6s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 2.8s;"></div>
+                    </div>
+                </div>
+
+                <!-- Esquina derecha trasera -->
+                <div class="flower tulip" style="--delay: 2.1s; position: absolute; right: 22%; top: 11%; transform: scale(0.69); z-index: 1;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 107px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 2.9s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 3.1s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower yellow-flower" style="--delay: 2.4s; position: absolute; right: 12%; top: 9%; transform: scale(0.63); z-index: 1;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 112px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 3.2s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 3.4s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 2.7s; position: absolute; right: 5%; top: 10%; transform: scale(0.66); z-index: 1;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 109px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 3.5s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 3.7s;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZONA MEDIA DEL JARDÍN -->
+            <div class="garden-middle-row">
+                <!-- Lado izquierdo medio -->
+                <div class="flower yellow-flower" style="--delay: 3s; position: absolute; left: 8%; top: 30%; transform: scale(0.85); z-index: 2;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 150px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 3.8s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 4s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 3.3s; position: absolute; left: 18%; top: 25%; transform: scale(0.9); z-index: 2;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 160px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 4.1s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 4.3s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower yellow-flower" style="--delay: 3.6s; position: absolute; left: 28%; top: 32%; transform: scale(0.95); z-index: 3;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 170px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 4.4s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 4.6s;"></div>
+                    </div>
+                </div>
+
+                <!-- Centro medio -->
+                <div class="flower tulip" style="--delay: 3.9s; position: absolute; left: 40%; top: 28%; transform: scale(1); z-index: 3;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 180px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 4.7s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 4.9s;"></div>
+                    </div>
+                </div>
+
+                <!-- GIRASOL PRINCIPAL CENTRAL -->
+                <div class="flower yellow-flower" style="--delay: 4.2s; position: absolute; left: 50%; top: 20%; transform: translateX(-50%) scale(1.2); z-index: 4;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 220px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 5s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 5.2s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 4.5s; position: absolute; right: 40%; top: 30%; transform: scale(0.95); z-index: 3;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 175px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 5.3s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 5.5s;"></div>
+                    </div>
+                </div>
+
+                <!-- Lado derecho medio -->
+                <div class="flower yellow-flower" style="--delay: 4.8s; position: absolute; right: 28%; top: 33%; transform: scale(0.9); z-index: 3;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 165px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 5.6s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 5.8s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 5.1s; position: absolute; right: 18%; top: 27%; transform: scale(0.88); z-index: 2;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 155px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 5.9s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 6.1s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower yellow-flower" style="--delay: 5.4s; position: absolute; right: 8%; top: 31%; transform: scale(0.83); z-index: 2;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 148px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 6.2s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 6.4s;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZONA FRONTAL DEL JARDÍN (primer plano) -->
+            <div class="garden-front-row">
+                <!-- Izquierda frontal -->
+                <div class="flower tulip" style="--delay: 5.7s; position: absolute; left: 12%; top: 55%; transform: scale(1.1); z-index: 5;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 190px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 6.5s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 6.7s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower yellow-flower" style="--delay: 6s; position: absolute; left: 25%; top: 50%; transform: scale(1.15); z-index: 5;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 200px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 6.8s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 7s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 6.3s; position: absolute; left: 38%; top: 58%; transform: scale(1.05); z-index: 5;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 185px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 7.1s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 7.3s;"></div>
+                    </div>
+                </div>
+
+                <!-- Centro frontal -->
+                <div class="flower yellow-flower" style="--delay: 6.6s; position: absolute; left: 50%; top: 52%; transform: translateX(-50%) scale(1.1); z-index: 5;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 195px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 7.4s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 7.6s;"></div>
+                    </div>
+                </div>
+
+                <!-- Derecha frontal -->
+                <div class="flower tulip" style="--delay: 6.9s; position: absolute; right: 38%; top: 56%; transform: scale(1.08); z-index: 5;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 188px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 7.7s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 7.9s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower yellow-flower" style="--delay: 7.2s; position: absolute; right: 25%; top: 48%; transform: scale(1.12); z-index: 5;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 198px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 8s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 8.2s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 7.5s; position: absolute; right: 12%; top: 53%; transform: scale(1.06); z-index: 5;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 187px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 8.3s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 8.5s;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLORES ADICIONALES DISPERSAS (llenado de espacios) -->
+            <div class="garden-scattered">
+                <div class="flower yellow-flower" style="--delay: 7.8s; position: absolute; left: 15%; top: 42%; transform: scale(0.8); z-index: 2;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 140px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 8.6s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 8.8s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 8.1s; position: absolute; right: 15%; top: 40%; transform: scale(0.85); z-index: 2;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 145px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 8.9s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 9.1s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower yellow-flower" style="--delay: 8.4s; position: absolute; left: 60%; top: 45%; transform: scale(0.75); z-index: 2;">
+                    <div class="yellow-flower-head">
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-petal"></div>
+                        <div class="yellow-flower-center"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 135px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 9.2s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 9.4s;"></div>
+                    </div>
+                </div>
+
+                <div class="flower tulip" style="--delay: 8.7s; position: absolute; left: 70%; top: 35%; transform: scale(0.78); z-index: 2;">
+                    <div class="tulip-head">
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                        <div class="tulip-petal"></div>
+                    </div>
+                    <div class="flower-stem" style="--stem-final-height: 138px;">
+                        <div class="leaf leaf-left" style="--leaf-delay: 9.5s;"></div>
+                        <div class="leaf leaf-right" style="--leaf-delay: 9.7s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
